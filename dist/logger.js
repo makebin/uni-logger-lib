@@ -29,7 +29,17 @@ class logger {
 			config
 		} = this.format(arguments);
 		this.options.upload && this.logger && this.logger.debug.apply(this.logger, args)
-		console.trace(...args);
+		this.logBeautify(args);
+	}
+
+	/**
+	 * 日志内容输出美化，折叠trace等信息
+	 */
+	logBeautify(args) {
+		console.groupCollapsed(...args.slice(0, 2));
+		console.log(...args);
+		console.trace();
+		console.groupEnd();
 	}
 
 	info() {
@@ -38,7 +48,7 @@ class logger {
 			config
 		} = this.format(arguments);
 		this.options.upload && this.logger && this.logger.info.apply(this.logger, args);
-		console.trace(...args);
+		this.logBeautify(args);
 	}
 
 	/**
@@ -50,7 +60,7 @@ class logger {
 			config
 		} = this.format(arguments);
 		this.options.upload && this.logger && this.logger.info.apply(this.logger, args);
-		console.trace(...args);
+		this.logBeautify(args);
 	}
 
 	warn() {
