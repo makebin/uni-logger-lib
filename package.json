@@ -1,0 +1,15 @@
+{
+  "name": "uni-logger-lib",
+  "version": "1.0.3",
+  "description": "小程序日志辅助类",
+  "main": "dist/logger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "uni-logger",
+    "log-optimize"
+  ],
+  "author": "bin",
+  "license": "MIT"
+}
