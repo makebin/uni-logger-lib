@@ -14,7 +14,7 @@ class logger {
 		const _val = [];
 		for (const ele of val) {
 			_val.push(ele);
-			if (typeof ele === 'object') {
+			if (typeof ele === 'object' && (Array.isArray(ele))) {
 				_val.push(JSON.stringify(ele));
 			}
 		}
